@@ -1,0 +1,13 @@
+{
+  "name": "dialogg",
+  "version": "0.0.0",
+  "description": "Kontextuella samband för din diabetes",
+  "dependencies": {
+    "riot": "2.2.*",
+    "d3": "3.5.*"
+  },
+  "devDependencies": {
+    "lingon": "2.2.*",
+    "gulp-riot": "0.3.*"
+  }
+}
