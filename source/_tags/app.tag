@@ -1,7 +1,7 @@
 <app>
-  <example max={opts.max || 2} sample={opts.sample || 'bla'}></example>
+  <nav-bar trigger={opts.trigger}></nav-bar>
 
-  this.on('update', function() {
-    console.log('update')
-  })
+  <graph show={opts.route == '/graph'}></graph>
+  <example show={opts.route == '/'} max={opts.max || 2} sample={opts.sample || 'bla'}></example>
+
 </app>

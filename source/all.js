@@ -1,15 +1,19 @@
 //= include '../node_modules/riot/riot.min.js'
 //= include '../node_modules/d3/d3.min.js'
+//= include '_data/**/*'
 //= include '_tags/**/*'
 
-var glob = {sample: 'example'}
+var glob = {
+  sample: 'example',
+  route: '/graph'
+}
 
-var a = 12
-var b = 14
+riot.observable(glob)
 
-setTimeout(function () {
-  glob.max = d3.max([a,b])
+glob.on('routeTo', function(to) {
+  console.log('hej', to)
+  this.route = to;
   riot.update()
-}, 1000)
+})
 
 riot.mount('app', glob)
