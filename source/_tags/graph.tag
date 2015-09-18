@@ -64,16 +64,16 @@
       var y = d3.scale.linear().range([height, 0]);
 
 
-var customTimeFormat = d3.time.format.multi([
-  [".%L", function(d) { return d.getMilliseconds(); }],
-  [":%S", function(d) { return d.getSeconds(); }],
-  ["%I:%M", function(d) { return d.getMinutes(); }],
-  ["%I %p", function(d) { return d.getHours(); }],
-  ["%a %d", function(d) { return d.getDay() && d.getDate() != 1; }],
-  ["%b %d", function(d) { return d.getDate() != 1; }],
-  ["%B", function(d) { return d.getMonth(); }],
-  ["%Y", function() { return true; }]
-]);
+      var customTimeFormat = d3.time.format.multi([
+        [".%L", function(d) { return d.getMilliseconds(); }],
+        [":%S", function(d) { return d.getSeconds(); }],
+        ["%H:%M", function(d) { return d.getMinutes(); }],
+        ["%-H:%M", function(d) { return d.getHours(); }],
+        ["%a %d", function(d) { return d.getDay() && d.getDate() != 1; }],
+        ["%b %d", function(d) { return d.getDate() != 1; }],
+        ["%B", function(d) { return d.getMonth(); }],
+        ["%Y", function() { return true; }]
+      ]);
 
 
       // Define the axes
@@ -85,6 +85,7 @@ var customTimeFormat = d3.time.format.multi([
 
       // Define the line
       var valueline = d3.svg.line()
+        .interpolate('monotone')
         .x(function(d) { return x(d.time); })
         .y(function(d) { return y(d.val); });
 
@@ -93,7 +94,6 @@ var customTimeFormat = d3.time.format.multi([
         .x(function(d) { return x(d.date); })
         .y0(height)
         .y1(function(d) { return y(d.close); });
-
 
 
 
