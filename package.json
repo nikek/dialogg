@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "description": "Kontextuella samband för din diabetes",
   "dependencies": {
-    "riot": "2.2.*",
-    "d3": "3.5.*"
+    "d3": "3.5.*",
+    "grapnel": "^0.6.2",
+    "riot": "2.2.*"
   },
   "devDependencies": {
     "lingon": "2.2.*",
